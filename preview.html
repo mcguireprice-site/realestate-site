@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>McGuire Price | Chicago Real Estate Broker</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+    --background:#f7f4ef;
+    --section:#efe9e1;
+    --text:#37332f;
+
+    --accent:#c2aa8a;
+    --accent-light:#e2d4c3;
+    --border:#e8dfd3;
+
+    --light:#ffffff;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Inter',sans-serif;
+    background:var(--background);
+    color:var(--text);
+    line-height:1.8;
+    -webkit-font-smoothing:antialiased;
+}
+
+.container{
+    width:min(1200px,90%);
+    margin:auto;
+}
+
+section{
+    padding:110px 0;
+}
+
+h1,h2,h3{
+    font-family:'Cormorant Garamond',serif;
+    font-weight:500;
+    letter-spacing:-0.02em;
+}
+
+img{
+    max-width:100%;
+    display:block;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+/* NAVIGATION */
+
+nav{
+    position:fixed;
+    top:0;
+    width:100%;
+    background:rgba(247,244,239,.94);
+    backdrop-filter:blur(12px);
+    border-bottom:1px solid var(--border);
+    z-index:1000;
+}
+
+.nav-wrap{
+    height:80px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.logo{
+    font-size:1.4rem;
+    letter-spacing:.15em;
+    text-transform:uppercase;
+}
+
+.logo span{
+    color:var(--accent);
+}
+
+.nav-links{
+    display:flex;
+    gap:2rem;
+    font-size:.95rem;
+}
+
+.nav-links a{
+    transition:.3s;
+}
+
+.nav-links a:hover{
+    color:var(--accent);
+}
+
+/* HERO */
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    padding-top:80px;
+}
+
+.hero-grid{
+    display:grid;
+    grid-template-columns:1.1fr .9fr;
+    gap:90px;
+    align-items:center;
+}
+
+.hero-text small{
+    letter-spacing:.25em;
+    text-transform:uppercase;
+    color:var(--accent);
+    font-weight:600;
+}
+
+.hero h1{
+    font-size:clamp(4rem,8vw,7rem);
+    line-height:.95;
+    margin:20px 0;
+}
+
+.hero p{
+    max-width:600px;
+    font-size:1.1rem;
+    color:#6c655f;
+}
+
+.btn{
+    display:inline-block;
+    margin-top:35px;
+    padding:16px 34px;
+    background:var(--accent);
+    color:white;
+    border-radius:999px;
+    font-weight:600;
+    transition:.3s;
+    box-shadow:0 10px 25px rgba(194,170,138,.25);
+}
+
+.btn:hover{
+    transform:translateY(-2px);
+    box-shadow:0 15px 35px rgba(194,170,138,.35);
+}
+
+.headshot{
+    aspect-ratio:4/5;
+    border-radius:24px;
+    border:1px solid var(--border);
+    background:#faf8f5;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    color:#777;
+    padding:2rem;
+}
+
+/* SECTION TITLES */
+
+.section-title{
+    font-size:4rem;
+    margin-bottom:20px;
+    color:var(--text);
+}
+
+.section-title::after{
+    content:"";
+    display:block;
+    width:60px;
+    height:2px;
+    background:var(--accent);
+    margin-top:18px;
+}
+
+.section-label{
+    color:var(--accent);
+    text-transform:uppercase;
+    letter-spacing:.2em;
+    font-size:.85rem;
+    font-weight:600;
+    margin-bottom:1rem;
+}
+
+/* ABOUT */
+
+.about{
+    background:var(--section);
+}
+
+.about-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:90px;
+    align-items:center;
+}
+
+.about p{
+    color:#5f5954;
+    margin-bottom:25px;
+    font-size:1.05rem;
+}
+
+/* RECENT SALE */
+
+.sale-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:90px;
+    align-items:center;
+}
+
+.sale-image{
+    aspect-ratio:16/11;
+    border-radius:24px;
+    border:1px solid var(--border);
+    background:#faf8f5;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    color:#777;
+    padding:2rem;
+}
+
+.sale-content p{
+    color:#5f5954;
+}
+
+.stats{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+    margin-top:45px;
+}
+
+.stat{
+    font-size:3rem;
+    font-family:'Cormorant Garamond',serif;
+    color:var(--text);
+}
+
+.stat-label{
+    color:#777;
+}
+
+/* VALUES */
+
+.values{
+    background:var(--section);
+}
+
+.value-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:35px;
+    margin-top:50px;
+}
+
+.value-card{
+    background:#fcfaf7;
+    border:1px solid var(--border);
+    border-radius:18px;
+    padding:40px;
+    transition:.3s;
+}
+
+.value-card:hover{
+    transform:translateY(-4px);
+}
+
+.value-card h3{
+    font-size:2rem;
+    margin-bottom:12px;
+}
+
+.value-card p{
+    color:#5f5954;
+}
+
+/* QUOTE */
+
+.quote{
+    background:#44403c;
+    color:#f7f4ef;
+    text-align:center;
+}
+
+.quote h2{
+    max-width:900px;
+    margin:auto;
+    font-size:clamp(2.5rem,5vw,4.5rem);
+    line-height:1.15;
+}
+
+/* CONTACT */
+
+.contact{
+    text-align:center;
+}
+
+.contact h2{
+    font-size:4.5rem;
+    margin-bottom:20px;
+}
+
+.contact p{
+    max-width:700px;
+    margin:auto;
+    color:#5f5954;
+}
+
+.contact-links{
+    margin-top:45px;
+    display:flex;
+    justify-content:center;
+    gap:40px;
+    flex-wrap:wrap;
+    color:#6c655f;
+}
+
+/* FOOTER */
+
+footer{
+    padding:40px;
+    text-align:center;
+    border-top:1px solid var(--border);
+    color:#777;
+    font-size:.9rem;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:900px){
+
+    .hero-grid,
+    .about-grid,
+    .sale-grid{
+        grid-template-columns:1fr;
+    }
+
+    .value-grid{
+        grid-template-columns:1fr;
+    }
+
+    .stats{
+        grid-template-columns:1fr;
+    }
+
+    .nav-links{
+        display:none;
+    }
+
+    .hero h1{
+        font-size:4rem;
+    }
+
+    .section-title,
+    .contact h2{
+        font-size:3rem;
+    }
+
+    section{
+        padding:80px 0;
+    }
+}
+
+</style>
+</head>
+<body>
+
+<nav>
+    <div class="container nav-wrap">
+
+        <div class="logo">
+            McGuire <span>Price</span>
+        </div>
+
+        <div class="nav-links">
+            <a href="#about">About</a>
+            <a href="#sale">Recent Sale</a>
+            <a href="#contact">Contact</a>
+        </div>
+
+    </div>
+</nav>
+
+<section class="hero">
+
+    <div class="container hero-grid">
+
+        <div class="hero-text">
+
+            <small>Chicago Real Estate Broker • @properties</small>
+
+            <h1>
+                Helping You Find
+                A Place To Build
+                Your Life.
+            </h1>
+
+            <p>
+                Real estate is about more than buying a home. It's about finding
+                the place where your future unfolds. With deep Chicago market
+                knowledge and a relationship-first approach, McGuire Price helps
+                clients navigate every step of the journey with confidence.
+            </p>
+
+            <a href="#contact" class="btn">
+                Schedule a Consultation
+            </a>
+
+        </div>
+
+        <div class="headshot">
+            <div>
+                <strong>McGuire Price Headshot</strong><br><br>
+                Replace this placeholder with a professional portrait.
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+<section class="about" id="about">
+
+    <div class="container about-grid">
+
+        <div>
+            <div class="section-label">About</div>
+
+            <h2 class="section-title">
+                Chicago Expertise.<br>
+                Personal Guidance.
+            </h2>
+        </div>
+
+        <div>
+
+            <p>
+                As a broker with @properties, McGuire Price combines market
+                expertise, strategic negotiation, and attentive service to help
+                buyers and sellers make confident decisions.
+            </p>
+
+            <p>
+                Whether you're purchasing your first home, relocating within
+                Chicago, or searching for the perfect next chapter, you'll
+                receive thoughtful guidance tailored to your goals.
+            </p>
+
+            <p>
+                His philosophy is simple: every client deserves a trusted
+                advisor who listens carefully, communicates clearly, and
+                genuinely cares about where their life is headed.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section id="sale">
+
+    <div class="container sale-grid">
+
+        <div class="sale-image">
+            <div>
+                <strong>Recent Sale Image</strong><br><br>
+                Replace with photography of a recently sold property.
+            </div>
+        </div>
+
+        <div class="sale-content">
+
+            <div class="section-label">
+                Featured Sale
+            </div>
+
+            <h2 class="section-title">
+                Delivering Results
+                Across Chicago
+            </h2>
+
+            <p>
+                Every transaction represents more than a sale—it represents a
+                client taking the next step toward the life they want to build.
+            </p>
+
+            <div class="stats">
+
+                <div>
+                    <div class="stat">100%</div>
+                    <div class="stat-label">Client Focused</div>
+                </div>
+
+                <div>
+                    <div class="stat">Chicago</div>
+                    <div class="stat-label">Market Expertise</div>
+                </div>
+
+                <div>
+                    <div class="stat">1:1</div>
+                    <div class="stat-label">Personal Service</div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section class="values">
+
+    <div class="container">
+
+        <div class="section-label">
+            Client Experience
+        </div>
+
+        <h2 class="section-title">
+            What Clients Can Expect
+        </h2>
+
+        <div class="value-grid">
+
+            <div class="value-card">
+                <h3>Guidance</h3>
+                <p>
+                    Clear communication and expert advice through every stage
+                    of the buying or selling process.
+                </p>
+            </div>
+
+            <div class="value-card">
+                <h3>Advocacy</h3>
+                <p>
+                    Strong representation and thoughtful negotiation designed
+                    to protect your interests.
+                </p>
+            </div>
+
+            <div class="value-card">
+                <h3>Partnership</h3>
+                <p>
+                    A long-term relationship built on trust, transparency,
+                    and results.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section class="quote">
+
+    <div class="container">
+
+        <h2>
+            “The right home isn't simply where you live.
+            It's where your future takes shape.”
+        </h2>
+
+    </div>
+
+</section>
+
+<section class="contact" id="contact">
+
+    <div class="container">
+
+        <div class="section-label">
+            Let's Connect
+        </div>
+
+        <h2>
+            Let's Find The Right Place.
+        </h2>
+
+        <p>
+            Whether you're buying, selling, investing, or simply exploring
+            your options, McGuire would love to help you take the next step.
+        </p>
+
+        <div class="contact-links">
+            <div>(312) 555-1234</div>
+            <div>mcguire@email.com</div>
+            <div>Chicago, Illinois</div>
+        </div>
+
+        <a href="mailto:mcguire@email.com" class="btn">
+            Get In Touch
+        </a>
+
+    </div>
+
+</section>
+
+<footer>
+    McGuire Price • Broker Associate • @properties Christie's International Real Estate
+</footer>
+
+</body>
+</html>
