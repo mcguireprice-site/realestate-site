@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://mcguireprice.com/</loc><lastmod>2026-10-23</lastmod></url>
+  <url><loc>https://mcguireprice.com/buy/</loc><lastmod>2026-10-23</lastmod></url>
+  <url><loc>https://mcguireprice.com/sell/</loc><lastmod>2026-10-23</lastmod></url>
+  <url><loc>https://mcguireprice.com/neighborhoods/</loc><lastmod>2026-10-23</lastmod></url>
+  <url><loc>https://mcguireprice.com/about/</loc><lastmod>2026-10-23</lastmod></url>
+  <url><loc>https://mcguireprice.com/contact/</loc><lastmod>2026-10-23</lastmod></url>
   <url><loc>https://mcguireprice.com/home-valuation/</loc><lastmod>2026-10-23</lastmod></url>
 </urlset>

@@ -1,15 +1,55 @@
 /* McGuire Price — site script (no dependencies) */
 
-/* ---- Settings you may edit ---- */
-// After you create the short "Inquiry" Jotform, paste its ID here (the number at the
-// end of its link, e.g. https://form.jotform.com/123456789 → "123456789").
-// Leave empty to hide the form slot; call/text/email links still work.
+/* ---------------- Settings you may edit ---------------- */
+
+// 1. Inquiry form: after creating the short "Inquiry" Jotform, paste its ID here
+//    (the number at the end of its link, e.g. https://form.jotform.com/123456789 → "123456789").
+//    While empty, the Contact page shows call / text / email options only.
 const INQUIRY_FORM_ID = "";
 
-(function () {
-  document.documentElement.classList.add("js");
+// 2. Google Analytics 4: paste your Measurement ID (looks like "G-XXXXXXXXXX").
+//    While empty, no analytics or tracking code loads.
+const GA_MEASUREMENT_ID = "";
 
-  /* Mobile navigation */
+/* -------------------------------------------------------- */
+
+(function () {
+  /* ---- Analytics + conversion events ---- */
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { window.dataLayer.push(arguments); }
+  const track = (name, params) => { if (GA_MEASUREMENT_ID) gtag("event", name, params || {}); };
+
+  if (GA_MEASUREMENT_ID) {
+    const s = document.createElement("script");
+    s.async = true;
+    s.src = "https://www.googletagmanager.com/gtag/js?id=" + GA_MEASUREMENT_ID;
+    document.head.appendChild(s);
+    gtag("js", new Date());
+    gtag("config", GA_MEASUREMENT_ID);
+  }
+
+  // Calls, texts and emails
+  document.addEventListener("click", (e) => {
+    const a = e.target.closest("a[href]");
+    if (!a) return;
+    const href = a.getAttribute("href");
+    const where = a.dataset.loc || location.pathname;
+    if (href.startsWith("tel:")) track("contact_call", { link_location: where });
+    else if (href.startsWith("sms:")) track("contact_text", { link_location: where });
+    else if (href.startsWith("mailto:")) track("contact_email", { link_location: where });
+  });
+
+  // Jotform submissions (Jotform notifies the page it is embedded in)
+  window.addEventListener("message", (e) => {
+    if (!/jotform\.com$|jotfor\.ms$/.test(new URL(e.origin).hostname)) return;
+    const d = typeof e.data === "string" ? e.data : JSON.stringify(e.data || "");
+    if (/submission-completed/i.test(d)) {
+      const isValuation = location.pathname.indexOf("/home-valuation") === 0;
+      track(isValuation ? "valuation_request" : "inquiry_submit", { form_page: location.pathname });
+    }
+  });
+
+  /* ---- Mobile navigation ---- */
   const toggle = document.querySelector(".nav-toggle");
   const nav = document.getElementById("site-nav");
   if (toggle && nav) {
@@ -20,9 +60,7 @@ const INQUIRY_FORM_ID = "";
     toggle.addEventListener("click", () =>
       setOpen(toggle.getAttribute("aria-expanded") !== "true")
     );
-    nav.addEventListener("click", (e) => {
-      if (e.target.closest("a")) setOpen(false);
-    });
+    nav.addEventListener("click", (e) => { if (e.target.closest("a")) setOpen(false); });
     document.addEventListener("keydown", (e) => {
       if (e.key === "Escape" && toggle.getAttribute("aria-expanded") === "true") {
         setOpen(false);
@@ -34,46 +72,12 @@ const INQUIRY_FORM_ID = "";
     });
   }
 
-  /* Current year */
+  /* ---- Current year ---- */
   document.querySelectorAll("[data-year]").forEach((el) => {
     el.textContent = new Date().getFullYear();
   });
 
-  /* Subtle reveal on scroll (skipped when reduced motion is preferred) */
-  const reveals = document.querySelectorAll(".reveal");
-  const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  if (!("IntersectionObserver" in window) || reduce) {
-    reveals.forEach((el) => el.classList.add("is-visible"));
-  } else {
-    const io = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("is-visible");
-            io.unobserve(entry.target);
-          }
-        });
-      },
-      { rootMargin: "0px 0px -8% 0px", threshold: 0.05 }
-    );
-    reveals.forEach((el) => io.observe(el));
-  }
-
-  /* Optional inquiry form on the homepage */
-  const slot = document.getElementById("inquiry-form");
-  if (slot && INQUIRY_FORM_ID) {
-    const iframe = document.createElement("iframe");
-    iframe.id = "JotFormIFrame-" + INQUIRY_FORM_ID;
-    iframe.title = "Send McGuire a message";
-    iframe.src = "https://form.jotform.com/" + INQUIRY_FORM_ID;
-    iframe.loading = "lazy";
-    iframe.allow = "geolocation; microphone; camera";
-    slot.appendChild(iframe);
-    slot.hidden = false;
-    loadJotformHandler(iframe.id);
-  }
-
-  /* Jotform auto-resize helper (used by the valuation page too) */
+  /* ---- Jotform embeds ---- */
   function loadJotformHandler(iframeId) {
     const run = () =>
       window.jotformEmbedHandler &&
@@ -86,5 +90,20 @@ const INQUIRY_FORM_ID = "";
     document.head.appendChild(s);
   }
 
+  // Inquiry form slot (Contact page)
+  const slot = document.getElementById("inquiry-form");
+  if (slot && INQUIRY_FORM_ID) {
+    const iframe = document.createElement("iframe");
+    iframe.id = "JotFormIFrame-" + INQUIRY_FORM_ID;
+    iframe.title = "Send McGuire a message";
+    iframe.src = "https://form.jotform.com/" + INQUIRY_FORM_ID;
+    iframe.allow = "geolocation; microphone; camera";
+    slot.appendChild(iframe);
+    slot.hidden = false;
+    document.querySelectorAll("[data-no-form]").forEach((el) => (el.hidden = true));
+    loadJotformHandler(iframe.id);
+  }
+
+  // Any static Jotform iframe (Home Value page)
   document.querySelectorAll("iframe[data-jotform]").forEach((f) => loadJotformHandler(f.id));
 })();

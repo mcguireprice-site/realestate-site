@@ -640,14 +640,167 @@ p { text-wrap: pretty; }
 .notfound h1 { font-size: clamp(3rem, 7vw, 6rem); margin: 18px 0 24px; }
 .notfound .hero-actions { margin-top: 32px; }
 
-/* ---------- Reveal (subtle, opt-in via JS) ---------- */
 
-.js .reveal { opacity: 0; transform: translateY(14px); transition: opacity .7s ease, transform .7s ease; }
-.js .reveal.is-visible { opacity: 1; transform: none; }
+/* ==========================================================================
+   Multi-page components (added in v2)
+   ========================================================================== */
+
+.page-section { padding-bottom: var(--space); }
+.page-section--alt { background: var(--paper-2); padding-top: var(--space); }
+
+.prose { max-width: 40rem; }
+.prose p + p { margin-top: 18px; }
+.prose .first { font-size: 1.1875rem; color: var(--ink); }
+
+/* Two-column section: heading left, content right */
+.split {
+  display: grid;
+  grid-template-columns: minmax(0, 4fr) minmax(0, 7fr);
+  gap: clamp(32px, 6vw, 96px);
+  padding-top: 20px;
+  border-top: 1px solid var(--ink);
+}
+.split > header .num {
+  display: block;
+  font-family: var(--serif);
+  font-variant-numeric: lining-nums;
+  font-size: 1.25rem;
+  color: var(--accent);
+  margin-bottom: 10px;
+}
+.split > header h2 { font-size: clamp(2rem, 3.6vw, 3rem); }
+.split > header p { margin-top: 14px; color: var(--muted); max-width: 22rem; }
+
+/* Numbered steps */
+.steps { list-style: none; padding: 0; counter-reset: s; }
+.steps li {
+  counter-increment: s;
+  display: grid;
+  grid-template-columns: 3rem 1fr;
+  gap: 0 1rem;
+  padding: 22px 0;
+  border-bottom: 1px solid var(--rule);
+}
+.steps li:first-child { padding-top: 4px; }
+.steps li::before {
+  content: counter(s, decimal-leading-zero);
+  font-family: var(--serif);
+  font-variant-numeric: lining-nums;
+  font-size: 1.25rem;
+  color: var(--accent);
+  line-height: 1.4;
+}
+.steps h3 { font-size: 1.5rem; margin-bottom: 6px; }
+
+/* Definition-style list (term + explanation) */
+.terms { list-style: none; padding: 0; }
+.terms li {
+  display: grid;
+  grid-template-columns: minmax(0, 13rem) 1fr;
+  gap: 4px 1.5rem;
+  padding: 18px 0;
+  border-bottom: 1px solid var(--rule);
+}
+.terms li:first-child { padding-top: 4px; }
+.terms strong { font-weight: 600; color: var(--ink); }
+.list-note { margin-top: 18px; font-size: 0.9rem; color: var(--muted); }
+
+/* Plain link list */
+.link-list { list-style: none; padding: 0; }
+.link-list li { padding: 16px 0; border-bottom: 1px solid var(--rule); }
+.link-list li:first-child { padding-top: 4px; }
+.link-list p { color: var(--muted); font-size: 0.95rem; margin-top: 4px; }
+
+/* Homepage: featured sale */
+.feature {
+  display: grid;
+  grid-template-columns: minmax(0, 7fr) minmax(0, 4fr);
+  gap: clamp(32px, 5vw, 72px);
+  align-items: end;
+}
+.feature figure { margin: 0; }
+.feature .frame { aspect-ratio: 4 / 3; overflow: hidden; background: var(--paper-2); }
+.feature img { width: 100%; height: 100%; object-fit: cover; }
+.feature h2 { font-size: clamp(2rem, 3.6vw, 3rem); margin: 12px 0 16px; }
+.feature .facts { margin-top: 24px; }
+
+/* Homepage: neighborhood highlights */
+.hood-grid {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0 clamp(20px, 3vw, 40px);
+}
+.hood-grid li { padding-top: 18px; border-top: 1px solid var(--rule); }
+.hood-grid h3 { font-size: 1.625rem; margin-bottom: 8px; }
+.hood-grid p { color: var(--muted); font-size: 0.95rem; }
+
+/* Neighborhoods page: full entries */
+.hood-entries { list-style: none; padding: 0; }
+.hood-entry {
+  display: grid;
+  grid-template-columns: 3rem minmax(0, 4fr) minmax(0, 7fr);
+  gap: 0 clamp(16px, 3vw, 48px);
+  padding: 28px 0;
+  border-top: 1px solid var(--rule);
+  scroll-margin-top: calc(var(--header-h) + 16px);
+}
+.hood-entry .n {
+  font-family: var(--serif);
+  font-variant-numeric: lining-nums;
+  font-size: 1.25rem;
+  color: var(--accent);
+}
+.hood-entry h2 { font-size: clamp(1.75rem, 2.6vw, 2.25rem); }
+.hood-entry .ask { margin-top: 10px; font-size: 0.95rem; color: var(--muted); }
+.hood-entry .ask strong { color: var(--ink); font-weight: 600; }
+
+/* Short intro block on the homepage */
+.intro-row {
+  display: grid;
+  grid-template-columns: minmax(0, 4fr) minmax(0, 7fr);
+  gap: clamp(32px, 6vw, 96px);
+  padding-top: 20px;
+  border-top: 1px solid var(--ink);
+}
+
+/* Closing call to action */
+.closing { padding-block: var(--space); text-align: left; }
+.closing h2 { font-size: clamp(2.5rem, 5.6vw, 4.75rem); max-width: 16ch; margin: 14px 0 24px; }
+.closing p { max-width: 34rem; }
+
+/* Contact page topic links */
+.topics { list-style: none; padding: 0; margin-top: 8px; }
+.topics li { border-bottom: 1px solid var(--rule); }
+.topics a {
+  display: flex; justify-content: space-between; gap: 1rem;
+  padding: 16px 0; text-decoration: none; color: var(--ink);
+}
+.topics a:hover { color: var(--accent); }
+
+@media (max-width: 1024px) {
+  .hood-grid { grid-template-columns: repeat(2, 1fr); gap: 28px 32px; }
+}
+
+@media (max-width: 880px) {
+  .split, .intro-row, .feature { grid-template-columns: 1fr; }
+  .split > header p { max-width: none; }
+  .hood-entry { grid-template-columns: 2.5rem 1fr; }
+  .hood-entry > div:last-child { grid-column: 2; margin-top: 10px; }
+  .terms li { grid-template-columns: 1fr; }
+  /* Valuation page: put the form before the explanation on small screens */
+  .val-grid .form-panel { order: -1; }
+}
+
+@media (max-width: 640px) {
+  .hood-grid { grid-template-columns: 1fr; gap: 0; }
+  .hood-grid li { padding-block: 18px; }
+  .closing .btn { width: 100%; }
+}
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  .js .reveal { opacity: 1; transform: none; transition: none; }
   * { transition: none !important; }
 }
 
@@ -736,3 +889,15 @@ p { text-wrap: pretty; }
   .footer-grid { grid-template-columns: 1fr; }
   .area-strip .label { width: 100%; }
 }
+
+/* v2 fixes: keep top rules aligned with the content edge when .wrap and a grid share an element */
+.wrap.split, .wrap.intro-row { border-top: 0; position: relative; }
+.wrap.split::before, .wrap.intro-row::before {
+  content: "";
+  position: absolute;
+  top: 0; left: var(--gutter); right: var(--gutter);
+  border-top: 1px solid var(--ink);
+}
+.split .facts { border-top: 0; margin-top: 0; }
+.page-hero h1 { max-width: 18ch; }
+h3.eyebrow, h2.eyebrow { font-family: var(--sans); }

@@ -12,13 +12,12 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="McGuire Price">
 <meta property="og:title" content="What would your Chicago home sell for today?">
-<meta property="og:description" content="A personal market analysis from broker McGuire Price, built from recent comparable sales. No obligation.">
+<meta property="og:description" content="Request a personal market analysis of your Chicago home or condo from broker McGuire Price, based on recent comparable sales and your property's specifics. No automated estimate and no obligation.">
 <meta property="og:url" content="https://mcguireprice.com/home-valuation/">
 <meta property="og:image" content="https://mcguireprice.com/images/sale-image.jpg">
 <meta name="twitter:card" content="summary_large_image">
 
 <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
-
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -27,12 +26,50 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Service",
-  "name": "Home valuation / comparative market analysis",
-  "serviceType": "Real estate market analysis",
-  "url": "https://mcguireprice.com/home-valuation/",
-  "areaServed": { "@type": "City", "name": "Chicago, IL" },
-  "provider": { "@id": "https://mcguireprice.com/#mcguire", "@type": "Person", "name": "McGuire Price" }
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://mcguireprice.com/home-valuation/#webpage",
+      "url": "https://mcguireprice.com/home-valuation/",
+      "name": "Chicago home valuation",
+      "isPartOf": {
+        "@id": "https://mcguireprice.com/#website"
+      },
+      "about": {
+        "@id": "https://mcguireprice.com/#mcguire"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://mcguireprice.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Home Value",
+          "item": "https://mcguireprice.com/home-valuation/"
+        }
+      ]
+    },
+    {
+      "@type": "Service",
+      "name": "Home valuation / comparative market analysis",
+      "serviceType": "Real estate market analysis",
+      "url": "https://mcguireprice.com/home-valuation/",
+      "areaServed": {
+        "@type": "City",
+        "name": "Chicago, IL"
+      },
+      "provider": {
+        "@id": "https://mcguireprice.com/#mcguire"
+      }
+    }
+  ]
 }
 </script>
 </head>
@@ -54,30 +91,26 @@
 
     <nav class="site-nav" id="site-nav" aria-label="Main">
       <ul>
-        <li><a href="/#buy">Buy</a></li>
-        <li><a href="/#sell">Sell</a></li>
-        <li><a href="/#neighborhoods">Neighborhoods</a></li>
-        <li><a href="/#about">About</a></li>
+        <li><a href="/buy/">Buy</a></li>
+        <li><a href="/sell/">Sell</a></li>
+        <li><a href="/neighborhoods/">Neighborhoods</a></li>
+        <li><a href="/about/">About</a></li>
         <li><a href="/home-valuation/" aria-current="page">Home Value</a></li>
-        <li><a class="nav-cta" href="/#contact">Contact</a></li>
+        <li><a class="nav-cta" href="/contact/">Contact</a></li>
       </ul>
     </nav>
   </div>
 </header>
 
-<main id="main">
-
   <section class="page-hero" aria-labelledby="page-title">
     <div class="wrap">
-      <p class="eyebrow">Home valuation &nbsp;/&nbsp; Chicago</p>
+      <p class="eyebrow">Home value</p>
       <h1 id="page-title">What would your home sell for today?</h1>
-      <p class="lede">
-        Online estimates can't see your floor plan, your view, your parking or
-        your building's finances. I can. Share a few details and I'll prepare a
-        market analysis based on recent comparable sales, then walk you through it.
-      </p>
+      <p class="lede">Online estimates can't see your floor plan, your view, your parking or your building's finances. Share a few details, and I'll prepare a market analysis from recent comparable sales.</p>
     </div>
   </section>
+
+<main id="main">
 
   <section aria-label="Valuation request">
     <div class="wrap val-grid">
@@ -85,28 +118,27 @@
       <aside class="val-aside">
         <h2>What you'll get</h2>
         <ul>
-          <li>A comparative market analysis built from recent nearby sales</li>
-          <li>For condos: how your unit compares within the building and against similar buildings (floor, exposure, parking, dues)</li>
+          <li>A market analysis built from recent comparable sales</li>
+          <li>For condos: how your unit compares within the building and with similar buildings</li>
           <li>A suggested price range, with the reasoning behind it</li>
-          <li>A conversation, not a sales pitch. There's no obligation to list.</li>
+          <li>No automated estimate, and no obligation to list</li>
         </ul>
 
         <h2>How it works</h2>
         <ol>
-          <li><span>Share your address and a few basics. It takes about two minutes.</span></li>
+          <li><span>Share your address and a few basics.</span></li>
           <li><span>I review the comparable sales and may follow up with a question or two.</span></li>
           <li><span>You receive your analysis, and we can talk it through.</span></li>
         </ol>
 
         <p class="note">
           Your details are used only to prepare your analysis and reply to you.
-          Prefer to talk first? Call or text <a class="text-link" href="tel:+12055032705">(205) 503-2705</a>.
+          Prefer to talk first? Call or text <a class="text-link" href="tel:+12055032705" data-loc="valuation">(205) 503-2705</a>.
         </p>
       </aside>
 
       <div class="form-panel">
-        <!-- Existing Jotform valuation form. To swap in a revised form, change the ID in both
-             the id and src attributes below. -->
+        <!-- Jotform valuation form. To swap in a revised form, change the ID in both the id and src attributes. -->
         <iframe
           id="JotFormIFrame-262954670584065"
           data-jotform
@@ -114,12 +146,9 @@
           src="https://form.jotform.com/262954670584065"
           allow="geolocation; microphone; camera"
           scrolling="no"></iframe>
-        <noscript>
-          <p class="form-fallback"><a class="text-link" href="https://form.jotform.com/262954670584065">Open the valuation form</a></p>
-        </noscript>
         <p class="form-fallback">
           Form not loading? <a class="text-link" href="https://form.jotform.com/262954670584065" target="_blank" rel="noopener">Open it in a new tab<span class="visually-hidden"> (opens in a new tab)</span></a>
-          or email <a class="text-link" href="mailto:mcguireprice@atproperties.com?subject=Home%20valuation%20request">mcguireprice@atproperties.com</a>.
+          or email <a class="text-link" href="mailto:mcguireprice@atproperties.com?subject=Home%20valuation%20request" data-loc="valuation">mcguireprice@atproperties.com</a>.
         </p>
       </div>
 
@@ -141,21 +170,24 @@
           Working with Team Caroline Chicago.
         </p>
       </div>
-      <div>
+      <nav aria-label="Footer">
         <h2>Explore</h2>
         <ul>
-          <li><a href="/#buy">Buying</a></li>
-          <li><a href="/#sell">Selling</a></li>
-          <li><a href="/#neighborhoods">Neighborhoods</a></li>
+          <li><a href="/buy/">Buying</a></li>
+          <li><a href="/sell/">Selling</a></li>
+          <li><a href="/neighborhoods/">Neighborhoods</a></li>
+          <li><a href="/about/">About</a></li>
           <li><a href="/home-valuation/">Home valuation</a></li>
         </ul>
-      </div>
+      </nav>
       <div>
         <h2>Contact</h2>
         <ul>
-          <li><a href="tel:+12055032705">(205) 503-2705</a></li>
-          <li><a href="mailto:mcguireprice@atproperties.com">Email McGuire</a></li>
+          <li><a href="tel:+12055032705" data-loc="footer">(205) 503-2705</a></li>
+          <li><a href="mailto:mcguireprice@atproperties.com" data-loc="footer">Email McGuire</a></li>
+          <li><a href="/contact/">Contact page</a></li>
           <li><a href="https://www.atproperties.com/site/McGuirePrice" target="_blank" rel="noopener">@properties profile<span class="visually-hidden"> (opens in a new tab)</span></a></li>
+          <!-- <li><a href="https://www.instagram.com/YOURHANDLE/" target="_blank" rel="noopener">Instagram</a></li> -->
         </ul>
       </div>
     </div>
@@ -167,9 +199,9 @@
 </footer>
 
 <nav class="mobile-bar" aria-label="Quick contact">
-  <a href="tel:+12055032705">Call</a>
-  <a href="sms:+12055032705">Text</a>
-  <a class="primary" href="/#contact">Contact</a>
+  <a href="tel:+12055032705" data-loc="mobile-bar">Call</a>
+  <a href="sms:+12055032705" data-loc="mobile-bar">Text</a>
+  <a class="primary" href="/contact/">Contact</a>
 </nav>
 
 <script src="/assets/js/site.js" defer></script>
