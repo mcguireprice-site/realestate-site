@@ -7,7 +7,10 @@
 //    While empty, the Contact page shows call / text / email options only.
 const INQUIRY_FORM_ID = "";
 
-// 2. Google Analytics 4: paste your Measurement ID (looks like "G-XXXXXXXXXX").
+// 2. First-time buyer workshop sign-up form (Jotform ID). Shows on the Buy page.
+const WORKSHOP_FORM_ID = "";
+
+// 3. Google Analytics 4: paste your Measurement ID (looks like "G-XXXXXXXXXX").
 //    While empty, no analytics or tracking code loads.
 const GA_MEASUREMENT_ID = "";
 
@@ -44,8 +47,10 @@ const GA_MEASUREMENT_ID = "";
     if (!/jotform\.com$|jotfor\.ms$/.test(new URL(e.origin).hostname)) return;
     const d = typeof e.data === "string" ? e.data : JSON.stringify(e.data || "");
     if (/submission-completed/i.test(d)) {
-      const isValuation = location.pathname.indexOf("/home-valuation") === 0;
-      track(isValuation ? "valuation_request" : "inquiry_submit", { form_page: location.pathname });
+      const p = location.pathname;
+      const name = p.indexOf("/home-valuation") === 0 ? "valuation_request"
+                 : p.indexOf("/buy") === 0 ? "workshop_signup" : "inquiry_submit";
+      track(name, { form_page: p });
     }
   });
 
@@ -90,19 +95,22 @@ const GA_MEASUREMENT_ID = "";
     document.head.appendChild(s);
   }
 
-  // Inquiry form slot (Contact page)
-  const slot = document.getElementById("inquiry-form");
-  if (slot && INQUIRY_FORM_ID) {
+  // Optional form slots: Contact page inquiry form, Buy page workshop sign-up
+  function fillSlot(slotId, formId, title, hideSelector) {
+    const slot = document.getElementById(slotId);
+    if (!slot || !formId) return;
     const iframe = document.createElement("iframe");
-    iframe.id = "JotFormIFrame-" + INQUIRY_FORM_ID;
-    iframe.title = "Send McGuire a message";
-    iframe.src = "https://form.jotform.com/" + INQUIRY_FORM_ID;
+    iframe.id = "JotFormIFrame-" + formId;
+    iframe.title = title;
+    iframe.src = "https://form.jotform.com/" + formId;
     iframe.allow = "geolocation; microphone; camera";
     slot.appendChild(iframe);
     slot.hidden = false;
-    document.querySelectorAll("[data-no-form]").forEach((el) => (el.hidden = true));
+    document.querySelectorAll(hideSelector).forEach((el) => (el.hidden = true));
     loadJotformHandler(iframe.id);
   }
+  fillSlot("inquiry-form", INQUIRY_FORM_ID, "Send McGuire a message", "[data-no-form]");
+  fillSlot("workshop-form", WORKSHOP_FORM_ID, "Sign up for the first-time homebuyer workshop", "[data-no-workshop-form]");
 
   // Any static Jotform iframe (Home Value page)
   document.querySelectorAll("iframe[data-jotform]").forEach((f) => loadJotformHandler(f.id));
