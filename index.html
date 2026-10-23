@@ -3,635 +3,427 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>McGuire Price | Chicago Real Estate Broker</title>
+
+<title>McGuire Price | Chicago Real Estate Broker, @properties Christie's</title>
+<meta name="description" content="McGuire Price is a Chicago real estate broker with @properties Christie's International Real Estate, helping clients buy, sell and rent in Lincoln Park, Lakeview, Gold Coast, Old Town, Streeterville, West Loop, River North, the South Loop and more.">
+<link rel="canonical" href="https://mcguireprice.com/">
+<meta name="theme-color" content="#f5f2ec">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="McGuire Price">
+<meta property="og:title" content="McGuire Price | Chicago Real Estate Broker">
+<meta property="og:description" content="Know the building. Know the block. Then decide. Chicago real estate with an eye for architecture and the details that shape value.">
+<meta property="og:url" content="https://mcguireprice.com/">
+<meta property="og:image" content="https://mcguireprice.com/images/sale-image.jpg">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-
-<style>
-
-:root{
-    --background:#f7f4ef;
-    --section:#efe9e1;
-    --text:#37332f;
-
-    --accent:#c2aa8a;
-    --accent-light:#e2d4c3;
-    --border:#e8dfd3;
-
-    --light:#ffffff;
-}
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
-html{
-    scroll-behavior:smooth;
-}
-
-body{
-    font-family:'Inter',sans-serif;
-    background:var(--background);
-    color:var(--text);
-    line-height:1.8;
-    -webkit-font-smoothing:antialiased;
-}
-
-.container{
-    width:min(1200px,90%);
-    margin:auto;
-}
-
-section{
-    padding:110px 0;
-}
-
-h1,h2,h3{
-    font-family:'Cormorant Garamond',serif;
-    font-weight:500;
-    letter-spacing:-0.02em;
-}
-
-img{
-    max-width:100%;
-    display:block;
-}
-
-a{
-    text-decoration:none;
-    color:inherit;
-}
-
-/* NAVIGATION */
-
-nav{
-    position:fixed;
-    top:0;
-    width:100%;
-    background:rgba(247,244,239,.94);
-    backdrop-filter:blur(12px);
-    border-bottom:1px solid var(--border);
-    z-index:1000;
-}
-
-.nav-wrap{
-    height:80px;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-}
-
-.logo{
-    font-size:1.4rem;
-    letter-spacing:.15em;
-    text-transform:uppercase;
-}
-
-.logo span{
-    color:var(--accent);
-}
-
-.nav-links{
-    display:flex;
-    gap:2rem;
-    font-size:.95rem;
-}
-
-.nav-links a{
-    transition:.3s;
-}
-
-.nav-links a:hover{
-    color:var(--accent);
-}
-
-/* HERO */
-
-.hero{
-    min-height:100vh;
-    display:flex;
-    align-items:center;
-    padding-top:80px;
-}
-
-.hero-grid{
-    display:grid;
-    grid-template-columns:1.1fr .9fr;
-    gap:90px;
-    align-items:center;
-}
-
-.hero-text small{
-    letter-spacing:.25em;
-    text-transform:uppercase;
-    color:var(--accent);
-    font-weight:600;
-}
-
-.hero h1{
-    font-size:clamp(4rem,8vw,7rem);
-    line-height:.95;
-    margin:20px 0;
-}
-
-.hero p{
-    max-width:600px;
-    font-size:1.1rem;
-    color:#6c655f;
-}
-
-.btn{
-    display:inline-block;
-    margin-top:35px;
-    padding:16px 34px;
-    background:var(--accent);
-    color:white;
-    border-radius:999px;
-    font-weight:600;
-    transition:.3s;
-    box-shadow:0 10px 25px rgba(194,170,138,.25);
-}
-
-.btn:hover{
-    transform:translateY(-2px);
-    box-shadow:0 15px 35px rgba(194,170,138,.35);
-}
-
-.headshot img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
-    border-radius:24px;
-}
-    
-.headshot{
-    aspect-ratio:4/5;
-    border-radius:24px;
-    border:1px solid var(--border);
-    background:#faf8f5;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    text-align:center;
-    color:#777;
-    padding:2rem;
-}
-
-/* SECTION TITLES */
-
-.section-title{
-    font-size:4rem;
-    margin-bottom:20px;
-    color:var(--text);
-}
-
-.section-title::after{
-    content:"";
-    display:block;
-    width:60px;
-    height:2px;
-    background:var(--accent);
-    margin-top:18px;
-}
-
-.section-label{
-    color:var(--accent);
-    text-transform:uppercase;
-    letter-spacing:.2em;
-    font-size:.85rem;
-    font-weight:600;
-    margin-bottom:1rem;
-}
-
-/* ABOUT */
-
-.about{
-    background:var(--section);
-}
-
-.about-grid{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:90px;
-    align-items:center;
-}
-
-.about p{
-    color:#5f5954;
-    margin-bottom:25px;
-    font-size:1.05rem;
-}
-
-/* RECENT SALE */
-
-.sale-grid{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:90px;
-    align-items:center;
-}
-
-.sale-image img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
-    border-radius:24px;
-}
-    
-.sale-image{
-    aspect-ratio:16/11;
-    border-radius:24px;
-    border:1px solid var(--border);
-    background:#faf8f5;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    text-align:center;
-    color:#777;
-    padding:2rem;
-}
-
-.sale-content p{
-    color:#5f5954;
-}
-
-.stats{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:20px;
-    margin-top:45px;
-}
-
-.stat{
-    font-size:3rem;
-    font-family:'Cormorant Garamond',serif;
-    color:var(--text);
-}
-
-.stat-label{
-    color:#777;
-}
-
-/* VALUES */
-
-.values{
-    background:var(--section);
-}
-
-.value-grid{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:35px;
-    margin-top:50px;
-}
-
-.value-card{
-    background:#fcfaf7;
-    border:1px solid var(--border);
-    border-radius:18px;
-    padding:40px;
-    transition:.3s;
-}
-
-.value-card:hover{
-    transform:translateY(-4px);
-}
-
-.value-card h3{
-    font-size:2rem;
-    margin-bottom:12px;
-}
-
-.value-card p{
-    color:#5f5954;
-}
-
-/* QUOTE */
-
-.quote{
-    background:#44403c;
-    color:#f7f4ef;
-    text-align:center;
-}
-
-.quote h2{
-    max-width:900px;
-    margin:auto;
-    font-size:clamp(2.5rem,5vw,4.5rem);
-    line-height:1.15;
-}
-
-/* CONTACT */
-
-.contact{
-    text-align:center;
-}
-
-.contact h2{
-    font-size:4.5rem;
-    margin-bottom:20px;
-}
-
-.contact p{
-    max-width:700px;
-    margin:auto;
-    color:#5f5954;
-}
-
-.contact-links{
-    margin-top:45px;
-    display:flex;
-    justify-content:center;
-    gap:40px;
-    flex-wrap:wrap;
-    color:#6c655f;
-}
-
-/* FOOTER */
-
-footer{
-    padding:40px;
-    text-align:center;
-    border-top:1px solid var(--border);
-    color:#777;
-    font-size:.9rem;
-}
-
-/* RESPONSIVE */
-
-@media(max-width:900px){
-
-    .hero-grid,
-    .about-grid,
-    .sale-grid{
-        grid-template-columns:1fr;
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/site.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://mcguireprice.com/#website",
+      "url": "https://mcguireprice.com/",
+      "name": "McGuire Price"
+    },
+    {
+      "@type": "Person",
+      "@id": "https://mcguireprice.com/#mcguire",
+      "name": "McGuire Price",
+      "jobTitle": "Real Estate Broker",
+      "url": "https://mcguireprice.com/",
+      "image": "https://mcguireprice.com/images/headshot.PNG",
+      "email": "mailto:mcguireprice@atproperties.com",
+      "telephone": "+1-205-503-2705",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "@properties Christie's International Real Estate",
+        "url": "https://www.atproperties.com/"
+      },
+      "knowsAbout": ["Chicago real estate", "Chicago condominiums", "Chicago architecture", "Historic homes", "Modernist architecture", "First-time home buying", "Home valuation"],
+      "sameAs": ["https://www.atproperties.com/site/McGuirePrice"]
+    },
+    {
+      "@type": "RealEstateAgent",
+      "@id": "https://mcguireprice.com/#agent",
+      "name": "McGuire Price, @properties Christie's International Real Estate",
+      "url": "https://mcguireprice.com/",
+      "image": "https://mcguireprice.com/images/headshot.PNG",
+      "telephone": "+1-205-503-2705",
+      "email": "mcguireprice@atproperties.com",
+      "employee": { "@id": "https://mcguireprice.com/#mcguire" },
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Chicago",
+        "addressRegion": "IL",
+        "addressCountry": "US"
+      },
+      "areaServed": [
+        { "@type": "City", "name": "Chicago, IL" },
+        { "@type": "Place", "name": "Lincoln Park, Chicago" },
+        { "@type": "Place", "name": "Lakeview, Chicago" },
+        { "@type": "Place", "name": "Gold Coast, Chicago" },
+        { "@type": "Place", "name": "Old Town, Chicago" },
+        { "@type": "Place", "name": "Streeterville, Chicago" },
+        { "@type": "Place", "name": "West Loop, Chicago" },
+        { "@type": "Place", "name": "Ravenswood, Chicago" },
+        { "@type": "Place", "name": "River North, Chicago" },
+        { "@type": "Place", "name": "South Loop, Chicago" }
+      ]
     }
-
-    .value-grid{
-        grid-template-columns:1fr;
-    }
-
-    .stats{
-        grid-template-columns:1fr;
-    }
-
-    .nav-links{
-        display:none;
-    }
-
-    .hero h1{
-        font-size:4rem;
-    }
-
-    .section-title,
-    .contact h2{
-        font-size:3rem;
-    }
-
-    section{
-        padding:80px 0;
-    }
+  ]
 }
-
-</style>
+</script>
 </head>
 <body>
 
-<nav>
-    <div class="container nav-wrap">
+<a class="skip-link" href="#main">Skip to content</a>
 
-        <div class="logo">
-            McGuire <span>Price</span>
-        </div>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="wordmark" href="/">
+      <strong>McGuire Price</strong>
+      <span>Chicago Real Estate</span>
+    </a>
 
-        <div class="nav-links">
-            <a href="#about">About</a>
-            <a href="#sale">Expertise</a>
-            <a href="#contact">Contact</a>
-        </div>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+      <span class="bars" aria-hidden="true"></span>
+      Menu
+    </button>
 
-    </div>
-</nav>
+    <nav class="site-nav" id="site-nav" aria-label="Main">
+      <ul>
+        <li><a href="/#buy">Buy</a></li>
+        <li><a href="/#sell">Sell</a></li>
+        <li><a href="/#neighborhoods">Neighborhoods</a></li>
+        <li><a href="/#about">About</a></li>
+        <li><a href="/home-valuation/">Home Value</a></li>
+        <li><a class="nav-cta" href="/#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
 
-<section class="hero">
+<main id="main">
 
-    <div class="container hero-grid">
-
-        <div class="hero-text">
-
-            <small>Chicago Real Estate Broker • @properties</small>
-
-            <h1>
-                Helping You Find
-                A Place To Build
-                Your Life.
-            </h1>
-
-            <p>
-                Real estate is about more than buying a home. It's about finding
-                the place where your future unfolds. With deep Chicago market
-                knowledge and a relationship-first approach, McGuire Price helps
-                clients navigate every step of the journey with confidence.
-            </p>
-
-            <a href="#contact" class="btn">
-                Schedule a Consultation
-            </a>
-
-        </div>
-
-        <div class="headshot">
-            <img src="images/headshot.PNG" alt="McGuire Price">
-        </div>
-
-    </div>
-
-</section>
-
-<section class="about" id="about">
-
-    <div class="container about-grid">
-
+  <!-- ============ HERO ============ -->
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="wrap">
+      <div class="hero-grid">
         <div>
-            <div class="section-label">About</div>
-
-            <h2 class="section-title">
-                Chicago Expertise.<br>
-                Personal Guidance.
-            </h2>
+          <p class="eyebrow">McGuire Price &nbsp;/&nbsp; Chicago Real Estate Broker</p>
+          <h1 id="hero-title">Know the building. Know the block. <em>Then decide.</em></h1>
+          <p class="lede">
+            I help people buy, sell and rent homes across Chicago with
+            @properties Christie's International Real Estate. I look closely at
+            the architecture, the building and the neighborhood, because that's
+            where a home's value and your day-to-day life are really decided.
+          </p>
+          <div class="hero-actions">
+            <a class="btn" href="#contact">Start a conversation</a>
+            <a class="text-link" href="/home-valuation/">What's my home worth? <span aria-hidden="true">→</span></a>
+          </div>
         </div>
 
-        <div>
+        <figure class="portrait">
+          <div class="frame">
+            <img src="/images/headshot.PNG" alt="Portrait of McGuire Price, Chicago real estate broker" width="800" height="1000" fetchpriority="high">
+          </div>
+          <figcaption>
+            <span>McGuire Price, Broker</span>
+            <span>@properties Christie's</span>
+          </figcaption>
+        </figure>
+      </div>
 
-            <p>
-                As a broker with @properties, McGuire Price combines market
-                expertise, strategic negotiation, and attentive service to help
-                buyers and sellers make confident decisions.
-            </p>
-
-            <p>
-                Whether you're purchasing your first home, relocating within
-                Chicago, or searching for the perfect next chapter, you'll
-                receive thoughtful guidance tailored to your goals.
-            </p>
-
-            <p>
-                His philosophy is simple: every client deserves a trusted
-                advisor who listens carefully, communicates clearly, and
-                genuinely cares about where their life is headed.
-            </p>
-
-        </div>
-
+      <p class="area-strip">
+        <span class="label">Where I work</span>
+        <span>Lincoln Park</span><span>Lakeview</span><span>Gold Coast</span><span>Old Town</span><span>Streeterville</span><span>West Loop</span><span>Ravenswood</span><span>River North</span><span>South Loop</span>
+      </p>
     </div>
+  </section>
 
-</section>
+  <!-- ============ 01 HOW I CAN HELP ============ -->
+  <section class="services" aria-labelledby="services-title">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="num">01</span>
+        <h2 id="services-title">How I can help</h2>
+      </div>
 
-<section id="sale">
+      <ul class="paths">
+        <li class="path reveal" id="buy">
+          <span class="kicker">Buying</span>
+          <h3>The right home, in the right building.</h3>
+          <p>
+            For a condo, that means reading the association's finances,
+            reserves, rental rules and planned projects before you commit.
+            For a house, it means understanding the block, how the home was
+            built and where the neighborhood is headed.
+          </p>
+          <p>
+            Buying for the first time? I run a first-time homebuyer workshop
+            that walks through the whole process, from pre-approval to closing.
+          </p>
+          <a class="text-link" href="#contact">Talk about buying <span aria-hidden="true">→</span></a>
+        </li>
 
-    <div class="container sale-grid">
+        <li class="path reveal" id="sell">
+          <span class="kicker">Selling</span>
+          <h3>A price you can defend, and a plan to get it.</h3>
+          <p>
+            I start with a market analysis built from recent comparable sales
+            and the specifics of your property: floor, exposure, parking,
+            association health and condition. Then we decide together how to
+            prepare, price and present your home to the buyers most likely
+            to value it.
+          </p>
+          <a class="text-link" href="/home-valuation/">Request a home valuation <span aria-hidden="true">→</span></a>
+        </li>
 
-    <div class="sale-image">
-        <img src="images/sale-image.jpg" alt="Recent sale represented by McGuire Price">
+        <li class="path reveal" id="rent">
+          <span class="kicker">Renting &amp; exploring</span>
+          <h3>Not ready to buy? Start here.</h3>
+          <p>
+            Maybe you're relocating, comparing neighborhoods, finding a rental
+            or weighing renting against buying. Bring your questions. A good
+            conversation now makes the eventual decision much easier, whenever
+            it comes.
+          </p>
+          <a class="text-link" href="#contact">Ask a question <span aria-hidden="true">→</span></a>
+        </li>
+      </ul>
     </div>
+  </section>
 
-        <div class="sale-content">
-
-            <div class="section-label">
-                Featured Sale
-            </div>
-
-            <h2 class="section-title">
-                Delivering Results
-                Across Chicago
-            </h2>
-
-            <p>
-                Every transaction represents more than a sale—it represents a
-                client taking the next step toward the life they want to build.
-            </p>
-
-            <div class="stats">
-
-                <div>
-                    <div class="stat">100%</div>
-                    <div class="stat-label">Client Focused</div>
-                </div>
-
-                <div>
-                    <div class="stat">Chicago</div>
-                    <div class="stat-label">Market Expertise</div>
-                </div>
-
-                <div>
-                    <div class="stat">1:1</div>
-                    <div class="stat-label">Personal Service</div>
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-<section class="values">
-
-    <div class="container">
-
-        <div class="section-label">
-            Client Experience
-        </div>
-
-        <h2 class="section-title">
-            What Clients Can Expect
-        </h2>
-
-        <div class="value-grid">
-
-            <div class="value-card">
-                <h3>Guidance</h3>
-                <p>
-                    Clear communication and expert advice through every stage
-                    of the buying or selling process.
-                </p>
-            </div>
-
-            <div class="value-card">
-                <h3>Advocacy</h3>
-                <p>
-                    Strong representation and thoughtful negotiation designed
-                    to protect your interests.
-                </p>
-            </div>
-
-            <div class="value-card">
-                <h3>Partnership</h3>
-                <p>
-                    A long-term relationship built on trust, transparency,
-                    and results.
-                </p>
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-<section class="quote">
-
-    <div class="container">
-
-        <h2>
-            “The right home isn't simply where you live.
-            It's where your future takes shape.”
-        </h2>
-
-    </div>
-
-</section>
-
-<section class="contact" id="contact">
-
-    <div class="container">
-
-        <div class="section-label">
-            Let's Connect
-        </div>
-
-        <h2>
-            Let's Find The Right Place.
-        </h2>
-
+  <!-- ============ 02 APPROACH ============ -->
+  <section class="approach" aria-labelledby="approach-title">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="num">02</span>
+        <h2 id="approach-title">What I look at that a listing won't show you</h2>
         <p>
-            Whether you're buying, selling, investing, or simply exploring
-            your options, McGuire would love to help you take the next step.
+          Photos and square footage are the easy part. These are the questions
+          I work through with every client, whether the home is a first condo
+          or a landmark.
+        </p>
+      </div>
+
+      <ul class="checklist">
+        <li class="reveal">
+          <h3>The building</h3>
+          <p>Age, construction, mechanical systems, and the maintenance decisions the owners have made or put off.</p>
+        </li>
+        <li class="reveal">
+          <h3>The association</h3>
+          <p>What the monthly dues actually cover, how healthy the reserves are, and whether special assessments or rental caps are coming.</p>
+        </li>
+        <li class="reveal">
+          <h3>The block</h3>
+          <p>What's been built nearby, what's planned, and how the street feels at 8 a.m. and at 8 p.m.</p>
+        </li>
+        <li class="reveal">
+          <h3>The design</h3>
+          <p>Layout, light, materials and architectural character, the qualities that hold value and are hard to add later.</p>
+        </li>
+        <li class="reveal">
+          <h3>The long view</h3>
+          <p>Who is likely to buy this home from you someday, and what they'll be looking for.</p>
+        </li>
+        <li class="reveal">
+          <h3>The fit</h3>
+          <p>Your commute, your budget, your next five years. The best home on paper isn't always the right one for you.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ 03 NEIGHBORHOODS ============ -->
+  <section class="neighborhoods" id="neighborhoods" aria-labelledby="hoods-title">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="num">03</span>
+        <h2 id="hoods-title">Chicago, neighborhood by neighborhood</h2>
+        <p>
+          I work across the city, most often in these neighborhoods. Each has
+          its own housing stock, and its own questions to ask before you buy.
+        </p>
+      </div>
+
+      <!-- When a neighborhood guide is published, wrap that <h3> text in a link to it,
+           e.g. <h3><a href="/neighborhoods/lincoln-park/">Lincoln Park</a></h3> -->
+      <ol class="hood-list">
+        <li class="reveal"><span class="n">01</span><div><h3>Lincoln Park</h3><p>Victorian greystones, brick row houses and vintage courtyard buildings around the park and the lakefront.</p></div></li>
+        <li class="reveal"><span class="n">02</span><div><h3>Lakeview</h3><p>Two- and three-flats, vintage courtyard buildings and lakefront high-rises, from Wrigleyville to East Lakeview.</p></div></li>
+        <li class="reveal"><span class="n">03</span><div><h3>Gold Coast</h3><p>Mansions and townhouses along Astor Street, and prewar co-ops facing the lake.</p></div></li>
+        <li class="reveal"><span class="n">04</span><div><h3>Old Town</h3><p>Nineteenth-century workers' cottages and Victorian homes in the Old Town Triangle, close to downtown.</p></div></li>
+        <li class="reveal"><span class="n">05</span><div><h3>Streeterville</h3><p>Lakefront towers, including Mies van der Rohe's 860–880 North Lake Shore Drive, steps from Michigan Avenue.</p></div></li>
+        <li class="reveal"><span class="n">06</span><div><h3>West Loop</h3><p>Converted warehouse lofts beside new construction, in the restaurant corridor around Fulton Market.</p></div></li>
+        <li class="reveal"><span class="n">07</span><div><h3>Ravenswood</h3><p>Tree-lined streets of single-family homes and two-flats along the Metra line.</p></div></li>
+        <li class="reveal"><span class="n">08</span><div><h3>River North</h3><p>Brick loft conversions, Bertrand Goldberg's Marina City and newer towers near the river.</p></div></li>
+        <li class="reveal"><span class="n">09</span><div><h3>South Loop</h3><p>Printer's Row lofts, the historic Prairie Avenue district and newer high-rises near the Museum Campus.</p></div></li>
+      </ol>
+
+      <p class="hood-foot">
+        <a class="text-link" href="#contact">Weighing two neighborhoods? Ask me how they compare <span aria-hidden="true">→</span></a>
+      </p>
+    </div>
+  </section>
+
+  <!-- ============ 04 ABOUT ============ -->
+  <section class="about" id="about" aria-labelledby="about-title">
+    <div class="wrap about-grid">
+      <figure class="about-figure reveal">
+        <div class="frame">
+          <img src="/images/sale-image.jpg" alt="A Chicago home recently sold, represented by McGuire Price" width="1200" height="900" loading="lazy" decoding="async">
+        </div>
+        <!-- Add specifics when you can: e.g. "Represented the seller · Two-bedroom condo, Lakeview · 2026" -->
+        <figcaption>A recent sale represented by McGuire Price.</figcaption>
+      </figure>
+
+      <div class="about-copy">
+        <p class="eyebrow">04 &nbsp;/&nbsp; About</p>
+        <h2 id="about-title">A broker who reads the details</h2>
+
+        <!-- Add 1–2 sentences of your own story here: where you're from, how you came to
+             Chicago, and why architecture caught your attention. Specific beats general. -->
+        <p class="first">
+          I'm a broker with @properties Christie's International Real Estate,
+          working with Team Caroline Chicago. I'm especially drawn to
+          architecture and design: historic homes, modernist buildings and the
+          one-of-a-kind properties that don't fit neatly into a search filter.
+        </p>
+        <p>
+          Most of my clients aren't buying anything unusual, though. They're
+          buying a first condo, selling a two-flat, or trying to decide whether
+          Lakeview or Ravenswood makes more sense for the next five years. My
+          approach is the same either way: look closely, ask the questions
+          people tend to skip, and give you a straight answer, even when the
+          answer is to wait.
+        </p>
+        <p>
+          I'd rather be the person you call with a question two years before
+          you move than the one who shows up only at the closing table.
         </p>
 
-        <div class="contact-links">
-            <div>(205) 503-2705</div>
-            <div>mcguireprice@atproperties.com</div>
-            <div>Chicago, Illinois</div>
-        </div>
-
-        <a href="https://www.atproperties.com/site/McGuirePrice" class="btn">
-            Get In Touch
-        </a>
-
+        <dl class="facts">
+          <div><dt>Brokerage</dt><dd>@properties Christie's International Real Estate</dd></div>
+          <div><dt>Team</dt><dd>Team Caroline Chicago</dd></div>
+          <div><dt>Works with</dt><dd>Buyers, sellers, renters and first-time buyers</dd></div>
+          <div><dt>Profile</dt><dd><a class="text-link" href="https://www.atproperties.com/site/McGuirePrice" target="_blank" rel="noopener">View my @properties profile <span aria-hidden="true">↗</span><span class="visually-hidden">(opens in a new tab)</span></a></dd></div>
+          <!-- Optional: <div><dt>License</dt><dd>Illinois Broker #___</dd></div> -->
+        </dl>
+      </div>
     </div>
+  </section>
 
-</section>
+  <!-- ============ VALUATION BAND ============ -->
+  <section class="valuation-band" aria-labelledby="val-title">
+    <div class="wrap">
+      <div class="band reveal">
+        <div>
+          <p class="eyebrow">For homeowners</p>
+          <h2 id="val-title">Curious what your home would sell for?</h2>
+          <p>
+            I'll prepare a market analysis from recent comparable sales and the
+            details that matter for your property. It's done by me, not an
+            automated estimate, and there's no obligation to list.
+          </p>
+        </div>
+        <a class="btn" href="/home-valuation/">Request a home valuation</a>
+      </div>
+    </div>
+  </section>
 
-<footer>
-    McGuire Price • Broker Associate • @properties Christie's International Real Estate
+  <!-- ============ CONTACT ============ -->
+  <section class="contact" id="contact" aria-labelledby="contact-title">
+    <div class="wrap contact-grid">
+      <div>
+        <p class="eyebrow">Contact</p>
+        <h2 id="contact-title">Let's talk.</h2>
+        <p class="lede">
+          Tell me what you're weighing, whether it's a purchase, a sale, a lease
+          or just a neighborhood you're curious about. I'll reply personally.
+        </p>
+        <ul class="reasons" aria-label="Good reasons to reach out">
+          <li>A home you saw online</li>
+          <li>Your home's value</li>
+          <li>Comparing neighborhoods</li>
+          <li>A condo building's finances</li>
+          <li>Renting vs. buying</li>
+        </ul>
+      </div>
+
+      <div>
+        <ul class="methods">
+          <li><a href="tel:+12055032705"><span class="k">Call</span><span class="v">(205) 503-2705</span><span class="arrow" aria-hidden="true">→</span></a></li>
+          <li><a href="sms:+12055032705"><span class="k">Text</span><span class="v">(205) 503-2705</span><span class="arrow" aria-hidden="true">→</span></a></li>
+          <li><a href="mailto:mcguireprice@atproperties.com?subject=Question%20from%20mcguireprice.com"><span class="k">Email</span><span class="v small">mcguireprice@<wbr>atproperties.com</span><span class="arrow" aria-hidden="true">→</span></a></li>
+          <li><a href="/home-valuation/"><span class="k">Selling</span><span class="v">Request a home valuation</span><span class="arrow" aria-hidden="true">→</span></a></li>
+        </ul>
+
+        <!-- Inquiry form: create a short Jotform (see SITE-GUIDE.md), then put its ID in
+             assets/js/site.js → INQUIRY_FORM_ID. It will appear here automatically. -->
+        <div class="form-slot" id="inquiry-form" hidden></div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <a class="wordmark" href="/">
+          <strong>McGuire Price</strong>
+          <span>Chicago Real Estate</span>
+        </a>
+        <p class="footer-brokerage">
+          Broker, @properties Christie's International Real Estate.
+          Working with Team Caroline Chicago.
+        </p>
+      </div>
+      <div>
+        <h2>Explore</h2>
+        <ul>
+          <li><a href="/#buy">Buying</a></li>
+          <li><a href="/#sell">Selling</a></li>
+          <li><a href="/#neighborhoods">Neighborhoods</a></li>
+          <li><a href="/home-valuation/">Home valuation</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Contact</h2>
+        <ul>
+          <li><a href="tel:+12055032705">(205) 503-2705</a></li>
+          <li><a href="mailto:mcguireprice@atproperties.com">Email McGuire</a></li>
+          <li><a href="https://www.atproperties.com/site/McGuirePrice" target="_blank" rel="noopener">@properties profile<span class="visually-hidden"> (opens in a new tab)</span></a></li>
+          <!-- <li><a href="https://www.instagram.com/YOURHANDLE/" target="_blank" rel="noopener">Instagram</a></li> -->
+        </ul>
+      </div>
+    </div>
+    <div class="legal">
+      <p>© <span data-year>2026</span> McGuire Price. Chicago, Illinois.</p>
+      <p>Equal Housing Opportunity. Information is deemed reliable but not guaranteed.</p>
+    </div>
+  </div>
 </footer>
 
+<nav class="mobile-bar" aria-label="Quick contact">
+  <a href="tel:+12055032705">Call</a>
+  <a href="sms:+12055032705">Text</a>
+  <a class="primary" href="/home-valuation/">Home value</a>
+</nav>
+
+<script src="/assets/js/site.js" defer></script>
 </body>
 </html>
