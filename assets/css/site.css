@@ -911,3 +911,47 @@ h3.eyebrow, h2.eyebrow { font-family: var(--sans); }
 .signup { margin-top: 40px; padding-top: 20px; border-top: 1px solid var(--rule); }
 .signup .eyebrow { margin-bottom: 10px; }
 .signup .form-slot { margin-top: 16px; }
+
+/* v4: neighborhood pages */
+.hood-entry h2 a,
+.hood-grid h3 a { text-decoration: none; transition: color .2s; }
+.hood-entry h2 a:hover,
+.hood-grid h3 a:hover { color: var(--accent); }
+.hood-entry .text-link { margin-top: 10px; font-size: 0.95rem; }
+
+.page-section--top { padding-top: var(--space); }
+
+.crumbs a { text-decoration: none; }
+.crumbs a:hover { color: var(--accent); }
+.crumbs span[aria-hidden] { margin-inline: 0.6em; color: var(--rule); }
+.crumbs [aria-current] { color: var(--ink); }
+
+.hood-pager { padding-block: var(--space); }
+.hood-pager .wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 24px;
+  padding-top: 32px;
+  position: relative;
+}
+.hood-pager .wrap::before {
+  content: "";
+  position: absolute;
+  top: 0; left: var(--gutter); right: var(--gutter);
+  border-top: 1px solid var(--ink);
+}
+.hood-pager .pager-item { display: flex; flex-direction: column; gap: 10px; }
+.hood-pager .next { align-items: flex-end; }
+.hood-pager .btn { min-width: 11rem; }
+.hood-pager .pager-name {
+  font-family: var(--serif);
+  font-size: 1.25rem;
+  color: var(--muted);
+}
+@media (max-width: 640px) {
+  .hood-pager .wrap { flex-wrap: wrap; }
+  .hood-pager .prev, .hood-pager .next { flex: 1 1 0; }
+  .hood-pager .btn { min-width: 0; width: 100%; padding-inline: 16px; }
+  .hood-pager .all { order: 3; flex-basis: 100%; }
+}
