@@ -10,7 +10,10 @@ const INQUIRY_FORM_ID = "";
 // 2. First-time buyer workshop sign-up form (Jotform ID). Shows on the Buy page.
 const WORKSHOP_FORM_ID = "";
 
-// 3. Google Analytics 4: paste your Measurement ID (looks like "G-XXXXXXXXXX").
+// 3. "Building notes" email sign-up form (Jotform ID). Shows on Insights pages and articles.
+const NOTES_FORM_ID = "";
+
+// 4. Google Analytics 4: paste your Measurement ID (looks like "G-XXXXXXXXXX").
 //    While empty, no analytics or tracking code loads.
 const GA_MEASUREMENT_ID = "";
 
@@ -49,7 +52,9 @@ const GA_MEASUREMENT_ID = "";
     if (/submission-completed/i.test(d)) {
       const p = location.pathname;
       const name = p.indexOf("/home-valuation") === 0 ? "valuation_request"
-                 : p.indexOf("/buy") === 0 ? "workshop_signup" : "inquiry_submit";
+                 : p.indexOf("/buy") === 0 ? "workshop_signup"
+                 : (p.indexOf("/insights") === 0 || p.indexOf("/architecture") === 0) ? "notes_signup"
+                 : "inquiry_submit";
       track(name, { form_page: p });
     }
   });
@@ -96,20 +101,40 @@ const GA_MEASUREMENT_ID = "";
   }
 
   // Optional form slots: Contact page inquiry form, Buy page workshop sign-up
-  function fillSlot(slotId, formId, title, hideSelector) {
-    const slot = document.getElementById(slotId);
+  // ?topic=... on a page URL (e.g. /contact/?topic=Gold%20Coast) is passed to the
+  // Jotform as a prefill. Name the matching Jotform field "topic" to use it.
+  const params = new URLSearchParams(location.search);
+  const topic = (params.get("topic") || "").slice(0, 80);
+
+  function fillSlot(slotId, formId, title, hideSelector, passTopic) {
+    const slot = document.getElementById(slotId) || document.querySelector('[data-slot="' + slotId + '"]');
     if (!slot || !formId) return;
     const iframe = document.createElement("iframe");
     iframe.id = "JotFormIFrame-" + formId;
     iframe.title = title;
-    iframe.src = "https://form.jotform.com/" + formId;
+    iframe.src = "https://form.jotform.com/" + formId + (passTopic && topic ? "?topic=" + encodeURIComponent(topic) : "");
     iframe.allow = "geolocation; microphone; camera";
     slot.appendChild(iframe);
     slot.hidden = false;
     document.querySelectorAll(hideSelector).forEach((el) => (el.hidden = true));
     loadJotformHandler(iframe.id);
   }
-  fillSlot("inquiry-form", INQUIRY_FORM_ID, "Send McGuire a message", "[data-no-form]");
+  fillSlot("inquiry-form", INQUIRY_FORM_ID, "Send McGuire a message", "[data-no-form]", true);
+  fillSlot("notes", NOTES_FORM_ID, "Sign up for Building notes", "[data-no-notes-form]");
+
+  // Without a contact form yet: show the topic and carry it into the email subject lines
+  if (topic && !INQUIRY_FORM_ID) {
+    const lede = document.querySelector(".contact .lede");
+    if (lede) {
+      const note = document.createElement("p");
+      note.className = "topic-note";
+      note.textContent = "You're asking about: " + topic;
+      lede.after(note);
+    }
+    document.querySelectorAll('.contact a[href^="mailto:"]').forEach((a) => {
+      a.href = a.href.replace(/subject=[^&]*/, "subject=" + encodeURIComponent(topic));
+    });
+  }
   fillSlot("workshop-form", WORKSHOP_FORM_ID, "Sign up for the first-time homebuyer workshop", "[data-no-workshop-form]");
 
   // Any static Jotform iframe (Home Value page)

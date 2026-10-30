@@ -4,15 +4,15 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Contact McGuire Price | Chicago Real Estate Broker</title>
-<meta name="description" content="Call, text or email Chicago real estate broker McGuire Price of @properties Christie's International Real Estate about buying, selling, renting or a home valuation.">
+<title>Contact McGuire Price · Chicago Real Estate Questions</title>
+<meta name="description" content="Ask Chicago broker McGuire Price about a building, a neighborhood or a move, even if you&#x27;re years away. Call, text or send a message.">
 <link rel="canonical" href="https://mcguireprice.com/contact/">
 <meta name="theme-color" content="#f5f2ec">
 
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="McGuire Price">
-<meta property="og:title" content="Contact McGuire Price">
-<meta property="og:description" content="Call, text or email Chicago real estate broker McGuire Price of @properties Christie's International Real Estate about buying, selling, renting or a home valuation.">
+<meta property="og:title" content="Contact McGuire Price · Chicago Real Estate Questions">
+<meta property="og:description" content="Ask Chicago broker McGuire Price about a building, a neighborhood or a move, even if you&#x27;re years away. Call, text or send a message.">
 <meta property="og:url" content="https://mcguireprice.com/contact/">
 <meta property="og:image" content="https://mcguireprice.com/images/sale-image.jpg">
 <meta name="twitter:card" content="summary_large_image">
@@ -38,6 +38,40 @@
       "about": {
         "@id": "https://mcguireprice.com/#mcguire"
       }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://mcguireprice.com/#mcguire",
+      "name": "McGuire Price",
+      "jobTitle": "Real Estate Broker",
+      "url": "https://mcguireprice.com/",
+      "image": "https://mcguireprice.com/images/headshot.jpg",
+      "email": "mailto:mcguireprice@atproperties.com",
+      "telephone": "+1-205-503-2705",
+      "alumniOf": {
+        "@type": "CollegeOrUniversity",
+        "name": "Northwestern University"
+      },
+      "worksFor": {
+        "@type": "Organization",
+        "name": "@properties Christie's International Real Estate",
+        "url": "https://www.atproperties.com/"
+      },
+      "knowsAbout": [
+        "Chicago real estate",
+        "Chicago condominiums",
+        "Condo association due diligence",
+        "Chicago architecture",
+        "Historic homes",
+        "Modernist architecture",
+        "Mies van der Rohe",
+        "First-time home buying",
+        "Home valuation",
+        "Chicago neighborhoods"
+      ],
+      "sameAs": [
+        "https://www.atproperties.com/site/McGuirePrice"
+      ]
     },
     {
       "@type": "BreadcrumbList",
@@ -81,6 +115,7 @@
         <li><a href="/buy/">Buy</a></li>
         <li><a href="/sell/">Sell</a></li>
         <li><a href="/neighborhoods/">Neighborhoods</a></li>
+        <li><a href="/insights/">Insights</a></li>
         <li><a href="/about/">About</a></li>
         <li><a href="/home-valuation/">Home Value</a></li>
         <li><a class="nav-cta" href="/contact/" aria-current="page">Contact</a></li>
@@ -95,32 +130,40 @@
     <div class="wrap contact-grid">
       <div>
         <p class="eyebrow">Contact</p>
-        <h1 id="page-title" style="font-size:clamp(3rem,6.4vw,5.5rem);margin:14px 0 24px">Let's talk.</h1>
+        <h1 id="page-title" class="h1-contact">Ask me anything. Even if you're not moving yet.</h1>
         <p class="lede">
-          Tell me what you're weighing: a purchase, a sale, a lease, or a
-          neighborhood you're curious about. I'll reply personally.
+          Most conversations start with a question: whether a building is well
+          run, how two neighborhoods compare, or whether now is the right time.
+          Send yours. I'll reply myself.
         </p>
 
         <div data-no-form>
           <p class="eyebrow" style="margin:40px 0 4px">Email me about</p>
           <ul class="topics">
+            <li><a href="mailto:mcguireprice@atproperties.com?subject=A%20building%20or%20listing" data-loc="contact-topic">A building or listing I'm looking at <span aria-hidden="true">→</span></a></li>
             <li><a href="mailto:mcguireprice@atproperties.com?subject=Buying%20in%20Chicago" data-loc="contact-topic">Buying a home or condo <span aria-hidden="true">→</span></a></li>
             <li><a href="mailto:mcguireprice@atproperties.com?subject=Selling%20my%20home" data-loc="contact-topic">Selling a home <span aria-hidden="true">→</span></a></li>
-            <li><a href="mailto:mcguireprice@atproperties.com?subject=Renting%20in%20Chicago" data-loc="contact-topic">Renting <span aria-hidden="true">→</span></a></li>
-            <li><a href="mailto:mcguireprice@atproperties.com?subject=A%20question%20for%20McGuire" data-loc="contact-topic">Something else <span aria-hidden="true">→</span></a></li>
+            <li><a href="mailto:mcguireprice@atproperties.com?subject=Comparing%20neighborhoods" data-loc="contact-topic">Comparing neighborhoods <span aria-hidden="true">→</span></a></li>
+            <li><a href="mailto:mcguireprice@atproperties.com?subject=A%20question%20for%20McGuire" data-loc="contact-topic">Just a question <span aria-hidden="true">→</span></a></li>
           </ul>
         </div>
+        <!-- Inquiry form appears here once INQUIRY_FORM_ID is set in /assets/js/site.js -->
+        <div class="form-slot" id="inquiry-form" hidden></div>
       </div>
-
       <div>
+        <figure class="contact-portrait">
+          <img src="/images/headshot.jpg" alt="Portrait of McGuire Price" width="640" height="800" loading="lazy" decoding="async">
+        </figure>
         <ul class="methods">
-          <li><a href="tel:+12055032705" data-loc="contact-page"><span class="k">Call / Text</span><span class="v">(205) 503-2705</span><span class="arrow" aria-hidden="true">→</span></a></li>
+          <li><a href="tel:+12055032705" data-loc="contact-page"><span class="k">Call</span><span class="v">(205) 503-2705</span><span class="arrow" aria-hidden="true">→</span></a></li>
+          <li><a href="sms:+12055032705" data-loc="contact-page"><span class="k">Text</span><span class="v">(205) 503-2705</span><span class="arrow" aria-hidden="true">→</span></a></li>
           <li><a href="mailto:mcguireprice@atproperties.com?subject=Question%20from%20mcguireprice.com" data-loc="contact-page"><span class="k">Email</span><span class="v small">mcguireprice@<wbr>atproperties.com</span><span class="arrow" aria-hidden="true">→</span></a></li>
           <li><a href="/home-valuation/"><span class="k">Selling</span><span class="v">Request a home valuation</span><span class="arrow" aria-hidden="true">→</span></a></li>
         </ul>
-
-        <!-- Inquiry form appears here once INQUIRY_FORM_ID is set in /assets/js/site.js -->
-        <div class="form-slot" id="inquiry-form" hidden></div>
+        <div class="next-steps">
+          <h2 class="eyebrow">What happens next</h2>
+          <p>I read every message myself. If it's a quick question, you'll get a quick answer. If it's bigger, I'll suggest a call. Either way, there's no obligation.</p>
+        </div>
       </div>
     </div>
   </section>
@@ -139,6 +182,7 @@
           Broker, @properties Christie's International Real Estate.
           Working with Team Caroline Chicago.
         </p>
+        <p class="footer-notes"><a href="/insights/#building-notes">Get Building notes</a>, an occasional email on Chicago buildings and neighborhoods.</p>
       </div>
       <nav aria-label="Footer">
         <h2>Explore</h2>
@@ -146,6 +190,8 @@
           <li><a href="/buy/">Buying</a></li>
           <li><a href="/sell/">Selling</a></li>
           <li><a href="/neighborhoods/">Neighborhoods</a></li>
+          <li><a href="/insights/">Insights</a></li>
+          <li><a href="/architecture/">Architecture</a></li>
           <li><a href="/about/">About</a></li>
           <li><a href="/home-valuation/">Home valuation</a></li>
         </ul>
@@ -155,12 +201,12 @@
         <ul>
           <li><a href="tel:+12055032705" data-loc="footer">(205) 503-2705</a></li>
           <li><a href="mailto:mcguireprice@atproperties.com" data-loc="footer">Email McGuire</a></li>
-          <li><a href="/contact/">Contact page</a></li>
+          <li><a href="/contact/">Ask a question</a></li>
           <li><a href="https://www.atproperties.com/site/McGuirePrice" target="_blank" rel="noopener">@properties profile<span class="visually-hidden"> (opens in a new tab)</span></a></li>
-          <!-- <li><a href="https://www.instagram.com/YOURHANDLE/" target="_blank" rel="noopener">Instagram</a></li> -->
         </ul>
       </div>
     </div>
+    <p class="footer-hoods"><span>Neighborhoods</span> <a href="/neighborhoods/lincoln-park/">Lincoln Park</a> <span aria-hidden="true">·</span> <a href="/neighborhoods/lakeview/">Lakeview</a> <span aria-hidden="true">·</span> <a href="/neighborhoods/gold-coast/">Gold Coast</a> <span aria-hidden="true">·</span> <a href="/neighborhoods/old-town/">Old Town</a> <span aria-hidden="true">·</span> <a href="/neighborhoods/streeterville/">Streeterville</a> <span aria-hidden="true">·</span> <a href="/neighborhoods/west-loop/">West Loop</a> <span aria-hidden="true">·</span> <a href="/neighborhoods/ravenswood/">Ravenswood</a> <span aria-hidden="true">·</span> <a href="/neighborhoods/river-north/">River North</a> <span aria-hidden="true">·</span> <a href="/neighborhoods/south-loop/">South Loop</a> <span aria-hidden="true">·</span> <a href="/neighborhoods/uptown/">Uptown</a> <span aria-hidden="true">·</span> <a href="/neighborhoods/edgewater/">Edgewater</a></p>
     <div class="legal">
       <p>© <span data-year>2026</span> McGuire Price. Chicago, Illinois.</p>
       <p>Equal Housing Opportunity. Information is deemed reliable but not guaranteed.</p>
@@ -171,7 +217,7 @@
 <nav class="mobile-bar" aria-label="Quick contact">
   <a href="tel:+12055032705" data-loc="mobile-bar">Call</a>
   <a href="sms:+12055032705" data-loc="mobile-bar">Text</a>
-  <a class="primary" href="/home-valuation/">Home value</a>
+  <a class="primary" href="/contact/">Ask</a>
 </nav>
 
 <script src="/assets/js/site.js" defer></script>

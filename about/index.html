@@ -4,21 +4,21 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>About McGuire Price | Chicago Real Estate Broker, @properties Christie's</title>
-<meta name="description" content="McGuire Price is a Chicago real estate broker with @properties Christie's International Real Estate, working with Team Caroline Chicago, with a particular interest in architecture and distinctive homes.">
+<title>About McGuire Price · Chicago Broker with an Eye for Buildings</title>
+<meta name="description" content="McGuire Price is a Chicago real estate broker with @properties Christie&#x27;s who starts with the building: its architecture, its upkeep and its finances. Northwestern grad, working with Team Caroline Chicago.">
 <link rel="canonical" href="https://mcguireprice.com/about/">
 <meta name="theme-color" content="#f5f2ec">
 
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="McGuire Price">
-<meta property="og:title" content="About McGuire Price">
-<meta property="og:description" content="McGuire Price is a Chicago real estate broker with @properties Christie's International Real Estate, working with Team Caroline Chicago, with a particular interest in architecture and distinctive homes.">
+<meta property="og:title" content="About McGuire Price · Chicago Broker with an Eye for Buildings">
+<meta property="og:description" content="McGuire Price is a Chicago real estate broker with @properties Christie&#x27;s who starts with the building: its architecture, its upkeep and its finances. Northwestern grad, working with Team Caroline Chicago.">
 <meta property="og:url" content="https://mcguireprice.com/about/">
 <meta property="og:image" content="https://mcguireprice.com/images/sale-image.jpg">
 <meta name="twitter:card" content="summary_large_image">
 
 <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
-<link rel="preload" as="image" href="/images/mcguire-headshot.jpg">
+<link rel="preload" as="image" href="/images/headshot.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -29,7 +29,41 @@
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "ProfilePage",
+      "@type": "Person",
+      "@id": "https://mcguireprice.com/#mcguire",
+      "name": "McGuire Price",
+      "jobTitle": "Real Estate Broker",
+      "url": "https://mcguireprice.com/",
+      "image": "https://mcguireprice.com/images/headshot.jpg",
+      "email": "mailto:mcguireprice@atproperties.com",
+      "telephone": "+1-205-503-2705",
+      "alumniOf": {
+        "@type": "CollegeOrUniversity",
+        "name": "Northwestern University"
+      },
+      "worksFor": {
+        "@type": "Organization",
+        "name": "@properties Christie's International Real Estate",
+        "url": "https://www.atproperties.com/"
+      },
+      "knowsAbout": [
+        "Chicago real estate",
+        "Chicago condominiums",
+        "Condo association due diligence",
+        "Chicago architecture",
+        "Historic homes",
+        "Modernist architecture",
+        "Mies van der Rohe",
+        "First-time home buying",
+        "Home valuation",
+        "Chicago neighborhoods"
+      ],
+      "sameAs": [
+        "https://www.atproperties.com/site/McGuirePrice"
+      ]
+    },
+    {
+      "@type": "AboutPage",
       "@id": "https://mcguireprice.com/about/#webpage",
       "url": "https://mcguireprice.com/about/",
       "name": "About McGuire Price",
@@ -37,9 +71,6 @@
         "@id": "https://mcguireprice.com/#website"
       },
       "about": {
-        "@id": "https://mcguireprice.com/#mcguire"
-      },
-      "mainEntity": {
         "@id": "https://mcguireprice.com/#mcguire"
       }
     },
@@ -85,6 +116,7 @@
         <li><a href="/buy/">Buy</a></li>
         <li><a href="/sell/">Sell</a></li>
         <li><a href="/neighborhoods/">Neighborhoods</a></li>
+        <li><a href="/insights/">Insights</a></li>
         <li><a href="/about/" aria-current="page">About</a></li>
         <li><a href="/home-valuation/">Home Value</a></li>
         <li><a class="nav-cta" href="/contact/">Contact</a></li>
@@ -99,33 +131,41 @@
     <div class="wrap">
       <div class="hero-grid" style="align-items:start">
         <div>
-          <p class="eyebrow">About</p>
-          <h1 id="page-title" style="font-size:clamp(2.75rem,6.4vw,5.5rem)">McGuire Price</h1>
+          <p class="eyebrow">About McGuire Price</p>
+          <h1 id="page-title" class="h1-page">A broker who starts with the building.</h1>
           <div class="prose">
             <p class="first">
-              I'm a real estate broker with @properties Christie's International
-              Real Estate, working with Team Caroline Chicago. I help people buy,
-              sell and rent homes across the city.
+              I grew up in Alabama and came to Chicago for Northwestern, where I
+              studied communications and theatre, with business institutions and
+              film studies alongside. Theatre trains you to read a space: how a room
+              is entered, where the light falls, what a set says before anyone speaks.
             </p>
-            <!-- YOUR STORY (2–4 sentences): where you grew up, how you came to Chicago,
-                 what you did before real estate, and why you chose this work.
-                 Specific details are what make an About page believable. -->
             <p>
-              I'm especially drawn to architecture and design: historic homes,
-              modernist buildings and the one-of-a-kind properties that don't
-              fit neatly into a search filter. That interest shapes how I look
-              at every home, including the ordinary ones. How a building was
-              made, and how it has been cared for, tells you a lot about what
-              it will be like to own.
+              Chicago's buildings did the rest. The greystones, the courtyard
+              buildings and Mies van der Rohe's towers on Lake Shore Drive kept
+              pulling my attention. Real estate turned that into something useful
+              for other people.
             </p>
           </div>
         </div>
         <figure class="portrait">
           <div class="frame">
-            <img src="/images/mcguire-headshot.jpg" alt="Portrait of McGuire Price" width="640" height="800" fetchpriority="high">
+            <img src="/images/headshot.jpg" alt="Portrait of McGuire Price" width="640" height="800" fetchpriority="high">
           </div>
+          <figcaption>
+            <span>McGuire Price, Broker</span>
+            <span>@properties Christie's</span>
+          </figcaption>
         </figure>
       </div>
+    </div>
+  </section>
+
+  <section class="page-section" aria-label="A note on how I work">
+    <div class="wrap">
+      <blockquote class="pullquote-block">
+        <p>“I'd rather be the person you call with a question two years before you move than the one who shows up only at the closing table.”</p>
+      </blockquote>
     </div>
   </section>
 
@@ -135,38 +175,55 @@
         <span class="num">01</span>
         <h2 id="how-title">How I work</h2>
       </header>
-      <div class="prose">
-        <p class="first">
-          Most of my clients aren't buying anything unusual. They're buying a
-          first condo, selling a two-flat, or trying to decide whether Lakeview
-          or Ravenswood makes more sense for the next five years.
-        </p>
-        <p>
-          My approach is the same either way: look closely, ask the questions
-          people tend to skip, and give you a straight answer, even when the
-          answer is to wait. I'd rather be the person you call with a question
-          two years before you move than the one who shows up only at the
-          closing table.
-        </p>
-        <p>
-          I also run a first-time homebuyer workshop, because the first
-          purchase is where clear explanations make the biggest difference.
-        </p>
-        <p style="margin-top:28px"><a class="btn btn--ghost" href="/buy/#first-time-buyers">About the first-time buyer workshop</a></p>
-        <!-- OPTIONAL "Outside of work" paragraph: a sentence or two about what you do
-             outside real estate. It makes the page more personal. -->
+      <div>
+        <div class="prose">
+          <p class="first">
+            Most of my clients aren't buying anything unusual. They're buying a
+            first condo, selling a two-flat, or trying to decide whether Lakeview
+            or Ravenswood makes more sense for the next five years.
+          </p>
+          <p>
+            My approach is the same either way: look closely, ask the questions
+            people tend to skip, and give you a straight answer, even when the
+            answer is to wait.
+          </p>
+        </div>
+        <ul class="terms terms--spaced">
+          <li><strong>I'll tell you when to wait.</strong><span>Sometimes the right move is not this unit, or not this year.</span></li>
+          <li><strong>I read the documents.</strong><span>Budgets, reserves, board minutes, rules. The boring pages are where the surprises are.</span></li>
+          <li><strong>I answer questions whether or not you're buying.</strong><span>A quick call now is worth more than a rushed decision later.</span></li>
+        </ul>
       </div>
     </div>
   </section>
 
-  <section class="valuation-band" style="padding-bottom:var(--space);padding-top:0" aria-labelledby="about-cta">
+  <section class="page-section page-section--alt" aria-labelledby="facts-title">
+    <div class="wrap split">
+      <header>
+        <span class="num">02</span>
+        <h2 id="facts-title">The short version</h2>
+      </header>
+      <div>
+        <dl class="facts">
+          <div><dt>Brokerage</dt><dd>@properties Christie's International Real Estate</dd></div>
+          <div><dt>Team</dt><dd>Team Caroline Chicago</dd></div>
+          <div><dt>Education</dt><dd>Northwestern University</dd></div>
+          <div><dt>Based in</dt><dd>Chicago</dd></div>
+          <div><dt>Works with</dt><dd>Buyers, sellers and renters across the city</dd></div>
+          <div><dt>Also</dt><dd><a class="text-link" href="/buy/#first-time-buyers">A first-time homebuyer workshop</a></dd></div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <section class="valuation-band" style="padding-bottom:var(--space)" aria-labelledby="about-cta">
     <div class="wrap">
       <div class="band">
         <div>
           <h2 id="about-cta">Let's talk about what you're planning.</h2>
           <p>Buying, selling, renting or just thinking it over.</p>
         </div>
-        <a class="btn" href="/contact/">Contact McGuire</a>
+        <a class="btn" href="/contact/">Ask a question</a>
       </div>
     </div>
   </section>
@@ -185,6 +242,7 @@
           Broker, @properties Christie's International Real Estate.
           Working with Team Caroline Chicago.
         </p>
+        <p class="footer-notes"><a href="/insights/#building-notes">Get Building notes</a>, an occasional email on Chicago buildings and neighborhoods.</p>
       </div>
       <nav aria-label="Footer">
         <h2>Explore</h2>
@@ -192,6 +250,8 @@
           <li><a href="/buy/">Buying</a></li>
           <li><a href="/sell/">Selling</a></li>
           <li><a href="/neighborhoods/">Neighborhoods</a></li>
+          <li><a href="/insights/">Insights</a></li>
+          <li><a href="/architecture/">Architecture</a></li>
           <li><a href="/about/">About</a></li>
           <li><a href="/home-valuation/">Home valuation</a></li>
         </ul>
@@ -201,12 +261,12 @@
         <ul>
           <li><a href="tel:+12055032705" data-loc="footer">(205) 503-2705</a></li>
           <li><a href="mailto:mcguireprice@atproperties.com" data-loc="footer">Email McGuire</a></li>
-          <li><a href="/contact/">Contact page</a></li>
+          <li><a href="/contact/">Ask a question</a></li>
           <li><a href="https://www.atproperties.com/site/McGuirePrice" target="_blank" rel="noopener">@properties profile<span class="visually-hidden"> (opens in a new tab)</span></a></li>
-          <!-- <li><a href="https://www.instagram.com/YOURHANDLE/" target="_blank" rel="noopener">Instagram</a></li> -->
         </ul>
       </div>
     </div>
+    <p class="footer-hoods"><span>Neighborhoods</span> <a href="/neighborhoods/lincoln-park/">Lincoln Park</a> <span aria-hidden="true">·</span> <a href="/neighborhoods/lakeview/">Lakeview</a> <span aria-hidden="true">·</span> <a href="/neighborhoods/gold-coast/">Gold Coast</a> <span aria-hidden="true">·</span> <a href="/neighborhoods/old-town/">Old Town</a> <span aria-hidden="true">·</span> <a href="/neighborhoods/streeterville/">Streeterville</a> <span aria-hidden="true">·</span> <a href="/neighborhoods/west-loop/">West Loop</a> <span aria-hidden="true">·</span> <a href="/neighborhoods/ravenswood/">Ravenswood</a> <span aria-hidden="true">·</span> <a href="/neighborhoods/river-north/">River North</a> <span aria-hidden="true">·</span> <a href="/neighborhoods/south-loop/">South Loop</a> <span aria-hidden="true">·</span> <a href="/neighborhoods/uptown/">Uptown</a> <span aria-hidden="true">·</span> <a href="/neighborhoods/edgewater/">Edgewater</a></p>
     <div class="legal">
       <p>© <span data-year>2026</span> McGuire Price. Chicago, Illinois.</p>
       <p>Equal Housing Opportunity. Information is deemed reliable but not guaranteed.</p>
@@ -217,7 +277,7 @@
 <nav class="mobile-bar" aria-label="Quick contact">
   <a href="tel:+12055032705" data-loc="mobile-bar">Call</a>
   <a href="sms:+12055032705" data-loc="mobile-bar">Text</a>
-  <a class="primary" href="/contact/">Contact</a>
+  <a class="primary" href="/contact/">Ask</a>
 </nav>
 
 <script src="/assets/js/site.js" defer></script>
